@@ -29,7 +29,6 @@ public class EquipmentType {
     @NotNull
     private double price;
 
-    @NotBlank
     private String imagePath;
 
     // Relacja do konkretnych sztuk sprzętu

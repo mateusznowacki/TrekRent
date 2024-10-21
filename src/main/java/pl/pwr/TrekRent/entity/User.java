@@ -22,27 +22,17 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
     private String name;
-
-    @NotBlank
     private String lastname;
-
-    @NotBlank
     private String phoneNumber;
 
-    @NotBlank
     @Email
     private String email;
 
-    @NotBlank
     @Size(max = 11)
     private String PESEL;
 
-    @NotBlank
     private String address;
-
-    @NotBlank
     private String password;
 
     @NotBlank

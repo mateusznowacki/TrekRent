@@ -22,20 +22,20 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @NotBlank
     private String name;
 
-    @NotNull
+    @NotBlank
     private String lastname;
 
-    @NotNull
+    @NotBlank
     private String phoneNumber;
 
-    @NotNull
+    @NotBlank
     @Email
     private String email;
 
-   // @NotBlank
+    @NotBlank
     @Size(max = 11)
     private String PESEL;
 
@@ -45,11 +45,11 @@ public class User {
     @NotBlank
     private String password;
 
-    @NotNull
+    @NotBlank
     @Size(max = 100)
     private String username;
 
-    @NotNull
+    @NotBlank
     private UserGroup userGroup;
 
     @OneToMany(mappedBy = "user" , fetch = FetchType.LAZY)

@@ -35,7 +35,7 @@ public class User {
     @Email
     private String email;
 
-    @NotNull
+   // @NotBlank
     @Size(max = 11)
     private String PESEL;
 
@@ -52,7 +52,7 @@ public class User {
     @NotNull
     private UserGroup userGroup;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user" , fetch = FetchType.LAZY)
     private List<Rental> rentals;
 
 }

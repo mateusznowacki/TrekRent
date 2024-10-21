@@ -1,7 +1,10 @@
 package pl.pwr.TrekRent.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+
+import java.sql.Date;
 
 @Entity
 @Table(name = "rentals")
@@ -19,5 +22,11 @@ public class Rental {
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
+
+    @NotNull
+    private Date startDate;
+
+    @NotNull
+    private Date endDate;
 
 }

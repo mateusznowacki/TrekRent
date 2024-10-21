@@ -3,6 +3,7 @@ package pl.pwr.TrekRent.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.util.List;
@@ -22,17 +23,17 @@ public class EquipmentType {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    @NotBlank
+    @NotNull
     private int availableCount;
 
-    @NotBlank
+    @NotNull
     private double price;
 
     @NotBlank
     private String imagePath;
 
     // Relacja do konkretnych sztuk sprzętu
-    @OneToMany(mappedBy = "equipmentType")
+    @OneToMany(mappedBy = "equipmentType", fetch = FetchType.LAZY)
     private List<Equipment> equipmentList;
 
 
